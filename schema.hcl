@@ -58,26 +58,22 @@ table "atlas_schema_revisions" {
 table "department" {
   schema = schema.public
   column "name" {
-    null = true
-    type = text
+    null = false
+    type = character_varying(255)
   }
   column "tax" {
-    null    = true
-    type    = numeric(38,4)
-    default = sql("NULL::numeric")
+    null = false
+    type = numeric(38,4)
   }
   column "bottledeposit" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = false
+    type = numeric(38,2)
   }
   column "environmentfee" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = false
+    type = numeric(38,2)
   }
-  index "idx_16957_primary" {
-    unique  = true
+  primary_key {
     columns = [column.name]
   }
 }
@@ -97,11 +93,11 @@ table "employee" {
   }
   column "name" {
     null = true
-    type = text
+    type = character_varying(255)
   }
   column "pin" {
     null = true
-    type = text
+    type = character_varying(255)
   }
   column "entity_id" {
     null = true
@@ -159,7 +155,7 @@ table "entity" {
     type = bigserial
   }
   column "name" {
-    null = false
+    null = true
     type = character_varying(255)
   }
   primary_key {
@@ -172,137 +168,137 @@ table "item" {
     null = false
     type = integer
     identity {
-      generated = ALWAYS
+      generated = BY_DEFAULT
+      start     = 10418
     }
   }
   column "barcode" {
     null = true
-    type = text
+    type = character_varying(255)
   }
   column "barcode2" {
     null = true
-    type = text
+    type = character_varying(255)
   }
   column "caseqty" {
-    null    = true
+    null    = false
     type    = integer
     default = 0
   }
   column "changeby" {
     null = true
-    type = text
+    type = character_varying(255)
   }
   column "changedate" {
-    null    = true
+    null    = false
     type    = timestamptz
     default = sql("CURRENT_TIMESTAMP")
   }
   column "comments" {
     null = true
-    type = text
+    type = character_varying(255)
   }
   column "cyaprsold" {
-    null    = true
+    null    = false
     type    = numeric(38,2)
     default = 0
   }
   column "cyaugsold" {
-    null    = true
+    null    = false
     type    = numeric(38,2)
     default = 0
   }
   column "cydecsold" {
-    null    = true
+    null    = false
     type    = numeric(38,2)
     default = 0
   }
   column "cyfebsold" {
-    null    = true
+    null    = false
     type    = numeric(38,2)
     default = 0
   }
   column "cyjansold" {
-    null    = true
+    null    = false
     type    = numeric(38,2)
     default = 0
   }
   column "cyjulsold" {
-    null    = true
+    null    = false
     type    = numeric(38,2)
     default = 0
   }
   column "cyjunsold" {
-    null    = true
+    null    = false
     type    = numeric(38,2)
     default = 0
   }
   column "cymarsold" {
-    null    = true
+    null    = false
     type    = numeric(38,2)
     default = 0
   }
   column "cymaysold" {
-    null    = true
+    null    = false
     type    = numeric(38,2)
     default = 0
   }
   column "cynovsold" {
-    null    = true
+    null    = false
     type    = numeric(38,2)
     default = 0
   }
   column "cyoctsold" {
-    null    = true
+    null    = false
     type    = numeric(38,2)
     default = 0
   }
   column "cysepsold" {
-    null    = true
+    null    = false
     type    = numeric(38,2)
     default = 0
   }
   column "cytotsold" {
-    null    = true
+    null    = false
     type    = numeric(38,2)
     default = 0
   }
   column "depositcode_tmp" {
     null = true
-    type = text
+    type = character_varying(255)
   }
   column "depositmultiplier" {
-    null = true
+    null = false
     type = integer
   }
   column "deptcode" {
     null = true
-    type = text
+    type = character_varying(255)
   }
   column "description" {
     null = true
-    type = text
+    type = character_varying(255)
   }
   column "envmultiplier" {
-    null = true
+    null = false
     type = integer
   }
   column "isdiscountallowed" {
-    null    = true
-    type    = text
+    null    = false
+    type    = character_varying(255)
     default = "No"
   }
   column "istaxed" {
     null = true
-    type = text
+    type = character_varying(255)
   }
   column "last1cost" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = true
+    type = numeric(38,2)
   }
   column "last1invoiceno" {
     null = true
-    type = text
+    type = character_varying(255)
   }
   column "last1orderdate" {
     null = true
@@ -322,16 +318,15 @@ table "item" {
   }
   column "last1vendorcode" {
     null = true
-    type = text
+    type = character_varying(255)
   }
   column "last2cost" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = true
+    type = numeric(38,2)
   }
   column "last2invoiceno" {
     null = true
-    type = text
+    type = character_varying(255)
   }
   column "last2orderdate" {
     null = true
@@ -351,12 +346,11 @@ table "item" {
   }
   column "last2vendorcode" {
     null = true
-    type = text
+    type = character_varying(255)
   }
   column "lowbottleprice" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = true
+    type = numeric(38,2)
   }
   column "outstandingposeqnumber" {
     null = true
@@ -364,89 +358,74 @@ table "item" {
   }
   column "outstandingpovendor" {
     null = true
-    type = text
+    type = character_varying(255)
   }
   column "price" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = true
+    type = numeric(38,2)
   }
   column "pricefuture" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = true
+    type = numeric(38,2)
   }
   column "print_price" {
     null = true
-    type = text
+    type = character_varying(255)
   }
   column "pyaprsold" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = false
+    type = numeric(38,2)
   }
   column "pyaugsold" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = false
+    type = numeric(38,2)
   }
   column "pydecsold" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = false
+    type = numeric(38,2)
   }
   column "pyfebsold" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = false
+    type = numeric(38,2)
   }
   column "pyjansold" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = false
+    type = numeric(38,2)
   }
   column "pyjulsold" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = false
+    type = numeric(38,2)
   }
   column "pyjunsold" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = false
+    type = numeric(38,2)
   }
   column "pymarsold" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = false
+    type = numeric(38,2)
   }
   column "pymaysold" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = false
+    type = numeric(38,2)
   }
   column "pynovsold" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = false
+    type = numeric(38,2)
   }
   column "pyoctsold" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = false
+    type = numeric(38,2)
   }
   column "pysepsold" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = false
+    type = numeric(38,2)
   }
   column "pytotsold" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = true
+    type = numeric(38,2)
   }
   column "qtyonhand" {
-    null = true
+    null = false
     type = double_precision
   }
   column "size1" {
@@ -460,21 +439,20 @@ table "item" {
   }
   column "subparentitembarcode_tmp" {
     null = true
-    type = text
+    type = character_varying(255)
   }
   column "subparentitemseqno" {
     null = true
     type = integer
   }
   column "subqty" {
-    null    = true
+    null    = false
     type    = integer
     default = 0
   }
   column "suggestedretail" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = true
+    type = numeric(38,2)
   }
   column "entity_id" {
     null = true
@@ -495,24 +473,26 @@ table "item" {
     on_update   = NO_ACTION
     on_delete   = NO_ACTION
   }
-  index "idx_16970_littleroosteritem_barcode_index" {
-    columns = [column.barcode]
-  }
-  index "idx_16970_littleroosteritem_description_index" {
-    columns = [column.description]
-  }
-  index "idx_16970_littleroosteritem_littleroosterdepartments_name_fk" {
-    columns = [column.deptcode]
-  }
-  index "idx_16970_littleroosteritem_littleroosteritem_itemseqno_fk" {
-    columns = [column.subparentitemseqno]
-  }
-  index "idx_16970_primary" {
-    unique  = true
-    columns = [column.itemseqno]
+  foreign_key "item_item_itemseqno_fk" {
+    columns     = [column.subparentitemseqno]
+    ref_columns = [table.item.column.itemseqno]
+    on_update   = NO_ACTION
+    on_delete   = NO_ACTION
   }
   index "item_barcode2_index" {
     columns = [column.barcode2]
+  }
+  index "item_barcode_index" {
+    columns = [column.barcode]
+  }
+  index "item_deptcode_index" {
+    columns = [column.deptcode]
+  }
+  index "item_description_index" {
+    columns = [column.description]
+  }
+  index "item_subparentitemseqno_index" {
+    columns = [column.subparentitemseqno]
   }
 }
 table "itemvendoritemmapping" {
@@ -523,38 +503,55 @@ table "itemvendoritemmapping" {
   }
   column "sku" {
     null = true
-    type = text
+    type = character_varying(255)
   }
   column "vendor" {
     null = false
-    type = text
+    type = character_varying(255)
   }
   primary_key {
     columns = [column.itemid, column.vendor]
   }
-  index "idx_16977_littleroosteritemvendoritemmapping_itemid_index" {
+  foreign_key "itemvendoritemmapping_item_itemseqno_fk" {
+    columns     = [column.itemid]
+    ref_columns = [table.item.column.itemseqno]
+    on_update   = NO_ACTION
+    on_delete   = NO_ACTION
+  }
+  foreign_key "itemvendoritemmapping_vendor_name_fk" {
+    columns     = [column.vendor]
+    ref_columns = [table.vendor.column.name]
+    on_update   = NO_ACTION
+    on_delete   = NO_ACTION
+  }
+  index "itemvendoritemmapping_itemid_index" {
     columns = [column.itemid]
   }
-  index "idx_16977_littleroosteritemvendoritemmapping_vendor_name_fk" {
+  index "itemvendoritemmapping_vendor_index" {
     columns = [column.vendor]
   }
 }
 table "merchantdevices" {
   schema = schema.public
   column "deviceregistrationid" {
-    null = true
-    type = text
+    null = false
+    type = character_varying(255)
   }
   column "merchantname" {
-    null = true
-    type = text
+    null = false
+    type = character_varying(255)
   }
-  index "idx_16982_merchantdevices_rainforestmerchants_name_fk" {
-    columns = [column.merchantname]
-  }
-  index "idx_16982_primary" {
-    unique  = true
+  primary_key {
     columns = [column.deviceregistrationid]
+  }
+  foreign_key "merchantdevices_rainforestmerchants_name_fk" {
+    columns     = [column.merchantname]
+    ref_columns = [table.rainforestmerchants.column.name]
+    on_update   = NO_ACTION
+    on_delete   = NO_ACTION
+  }
+  index "merchantdevices_merchantname_index" {
+    columns = [column.merchantname]
   }
 }
 table "purchaseorderitems" {
@@ -583,7 +580,7 @@ table "purchaseorderitems" {
     default = "open"
   }
   column "unitsentered" {
-    null    = true
+    null    = false
     type    = integer
     default = 0
   }
@@ -593,29 +590,28 @@ table "purchaseorderitems" {
     default = 0
   }
   column "unitcost" {
-    null    = true
+    null    = false
     type    = numeric(38,2)
     default = 0
   }
   column "itemname" {
     null = true
-    type = text
+    type = character_varying(255)
   }
   column "size" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = true
+    type = numeric(38,2)
   }
   column "vendorsku" {
     null = true
-    type = text
+    type = character_varying(255)
   }
   column "vendor" {
     null = false
-    type = text
+    type = character_varying(255)
   }
   column "casecost" {
-    null    = true
+    null    = false
     type    = numeric(38,2)
     default = 0
   }
@@ -625,7 +621,7 @@ table "purchaseorderitems" {
     default = sql("CURRENT_TIMESTAMP")
   }
   primary_key {
-    columns = [column.itemid, column.vendor, column.poid]
+    columns = [column.poid, column.itemid, column.vendor]
   }
   foreign_key "purchaseorderitems_item_itemseqno_fk" {
     columns     = [column.itemid]
@@ -639,15 +635,16 @@ table "purchaseorderitems" {
     on_update   = NO_ACTION
     on_delete   = NO_ACTION
   }
-  index "idx_16987_purchaseorderitems_littleroosteritem_itemseqno_fk" {
+  index "purchaseorderitems_itemid_index" {
     columns = [column.itemid]
   }
-  index "idx_16987_purchaseorderitems_vendoritem_sku_vendor_fk" {
+  index "purchaseorderitems_vendorsku_vendor_index" {
     columns = [column.vendorsku, column.vendor]
   }
 }
 table "purchaseorders" {
-  schema = schema.public
+  schema  = schema.public
+  comment = "metadata about purchase orders"
   column "id" {
     null = false
     type = integer
@@ -657,10 +654,10 @@ table "purchaseorders" {
   }
   column "name" {
     null = true
-    type = text
+    type = character_varying(2000)
   }
   column "status" {
-    null    = true
+    null    = false
     type    = enum.purchaseorders_status
     default = "open"
   }
@@ -675,7 +672,7 @@ table "purchaseorders" {
   }
   column "invoiceid" {
     null = true
-    type = text
+    type = character_varying(255)
   }
   column "entity_id" {
     null = true
@@ -690,34 +687,25 @@ table "purchaseorders" {
     on_update   = NO_ACTION
     on_delete   = NO_ACTION
   }
-  index "idx_17000_primary" {
-    unique  = true
-    columns = [column.id]
-  }
-  index "idx_17000_purchaseorders_id_uindex" {
-    unique  = true
-    columns = [column.id]
-  }
 }
 table "rainforestmerchants" {
   schema = schema.public
   column "name" {
-    null = true
-    type = text
+    null = false
+    type = character_varying(255)
   }
   column "merchantid" {
-    null = true
-    type = text
+    null = false
+    type = character_varying(255)
   }
   column "merchantapplicationid" {
-    null = true
-    type = text
+    null = false
+    type = character_varying(255)
   }
-  index "idx_17007_primary" {
-    unique  = true
+  primary_key {
     columns = [column.name]
   }
-  index "idx_17007_rainforestmerchants_merchantid_index" {
+  index "rainforestmerchants_merchantid_index" {
     columns = [column.merchantid]
   }
 }
@@ -731,75 +719,64 @@ table "transactionclosings" {
     }
   }
   column "registernumber" {
-    null = true
+    null = false
     type = integer
   }
   column "employeeid" {
-    null = true
+    null = false
     type = integer
   }
   column "opendatetime" {
-    null = true
+    null = false
     type = timestamptz
   }
   column "closedatetime" {
-    null = true
+    null = false
     type = timestamptz
   }
   column "totaltax" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = false
+    type = numeric(38,2)
   }
   column "totalsale" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = false
+    type = numeric(38,2)
   }
   column "totalbottlefee" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = false
+    type = numeric(38,2)
   }
   column "totalenvironmentfee" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = false
+    type = numeric(38,2)
   }
   column "registeropeningbalance" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = true
+    type = numeric(38,2)
   }
   column "registerclosingbalance" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = true
+    type = numeric(38,2)
   }
   column "totalcreditcardsale" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = false
+    type = numeric(38,2)
   }
   column "totaldiscount" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = false
+    type = numeric(38,2)
   }
   column "totalothersale" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = false
+    type = numeric(38,2)
   }
   column "totalchecksale" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = false
+    type = numeric(38,2)
   }
   column "totalsubtotal" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = false
+    type = numeric(38,2)
   }
   column "entity_id" {
     null = true
@@ -820,7 +797,7 @@ table "transactionclosings" {
     on_update   = NO_ACTION
     on_delete   = NO_ACTION
   }
-  index "idx_17012_transactionclosings_employee_id_fk" {
+  index "transactionclosings_employeeid_index" {
     columns = [column.employeeid]
   }
 }
@@ -834,87 +811,80 @@ table "transactionitems" {
     }
   }
   column "quantity" {
-    null = true
+    null = false
     type = integer
   }
   column "littleroosteritemid" {
-    null = true
+    null = false
     type = integer
   }
   column "price" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = false
+    type = numeric(38,2)
   }
   column "tax" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = false
+    type = numeric(38,2)
   }
   column "upccode" {
     null = true
-    type = text
+    type = character_varying(255)
   }
   column "name" {
-    null = true
-    type = text
+    null = false
+    type = character_varying(255)
   }
   column "totalprice" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = false
+    type = numeric(38,2)
   }
   column "transactionfk" {
-    null = true
+    null = false
     type = integer
   }
   column "discount" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = false
+    type = numeric(38,2)
   }
   column "bottledeposit" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = false
+    type = numeric(38,2)
   }
   column "environmentfee" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = false
+    type = numeric(38,2)
   }
   column "department" {
-    null = true
-    type = text
+    null = false
+    type = character_varying(255)
   }
   primary_key {
     columns = [column.id]
   }
-  foreign_key "transactionitems_item_itemseqno_fk" {
-    columns     = [column.littleroosteritemid]
-    ref_columns = [table.item.column.itemseqno]
+  foreign_key "transactionsmetadata_departments_name_fk" {
+    columns     = [column.department]
+    ref_columns = [table.department.column.name]
     on_update   = NO_ACTION
     on_delete   = NO_ACTION
   }
-  foreign_key "transactionitems_transactions_id_fk" {
+  foreign_key "transactionsmetadata_transactions_id_fk" {
     columns     = [column.transactionfk]
     ref_columns = [table.transactions.column.id]
     on_update   = NO_ACTION
-    on_delete   = NO_ACTION
+    on_delete   = CASCADE
   }
-  index "idx_17021_transactionsmetadata_departments_name_fk" {
+  index "transactionitems_department_index" {
     columns = [column.department]
   }
-  index "idx_17021_transactionsmetadata_transactions_id_fk" {
+  index "transactionitems_transactionfk_index" {
     columns = [column.transactionfk]
   }
 }
 table "transactions" {
   schema = schema.public
   column "amountreceived" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = true
+    type = numeric(38,2)
   }
   column "id" {
     null = false
@@ -924,9 +894,8 @@ table "transactions" {
     }
   }
   column "transactiontotal" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = true
+    type = numeric(38,2)
   }
   column "createddate" {
     null = true
@@ -934,29 +903,26 @@ table "transactions" {
   }
   column "paymentform" {
     null = true
-    type = text
+    type = character_varying(255)
   }
   column "registernumber" {
-    null = true
+    null = false
     type = integer
   }
   column "creditcardamountreceived" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = false
+    type = numeric(38,2)
   }
   column "checkamountreceived" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = false
+    type = numeric(38,2)
   }
   column "otheramountreceived" {
-    null    = true
-    type    = numeric(38,2)
-    default = sql("NULL::numeric")
+    null = false
+    type = numeric(38,2)
   }
   column "isvoided" {
-    null    = true
+    null    = false
     type    = boolean
     default = false
   }
@@ -966,7 +932,7 @@ table "transactions" {
   }
   column "payinconfigid" {
     null = true
-    type = text
+    type = character_varying(255)
   }
   column "entity_id" {
     null = true
@@ -987,7 +953,10 @@ table "transactions" {
     on_update   = NO_ACTION
     on_delete   = NO_ACTION
   }
-  index "idx_17015_littleroostertransactions_createddate_index" {
+  index "transactions_closingsid_index" {
+    columns = [column.closingsid]
+  }
+  index "transactions_createddate_index" {
     columns = [column.createddate]
   }
 }
@@ -1035,11 +1004,11 @@ table "vendor" {
   schema = schema.public
   column "name" {
     null = false
-    type = text
+    type = character_varying(255)
   }
   column "displayname" {
-    null = true
-    type = text
+    null = false
+    type = character_varying(255)
   }
   primary_key {
     columns = [column.name]
@@ -1080,81 +1049,87 @@ table "vendoritem" {
     type = integer
   }
   column "last_modified" {
-    null = true
+    null = false
     type = timestamptz
   }
   column "size_unit" {
     null = true
-    type = text
+    type = character_varying(50)
   }
   column "ttb" {
     null = true
-    type = text
+    type = character_varying(50)
   }
   column "upc" {
     null = true
-    type = text
+    type = character_varying(50)
   }
   column "product_style" {
     null = true
-    type = text
+    type = character_varying(100)
   }
   column "product_subtype" {
     null = true
-    type = text
+    type = character_varying(100)
   }
   column "product_type" {
     null = true
-    type = text
+    type = character_varying(100)
   }
   column "product_name" {
-    null = true
-    type = text
+    null = false
+    type = character_varying(355)
   }
   column "vendor_product_name" {
     null = true
-    type = text
+    type = character_varying(355)
   }
   column "parent_producer" {
     null = true
-    type = text
+    type = character_varying(255)
   }
   column "producer" {
     null = true
-    type = text
+    type = character_varying(255)
   }
   column "product_line_id" {
     null = true
-    type = text
+    type = character_varying(255)
   }
   column "sku" {
     null = false
-    type = text
+    type = character_varying(255)
   }
   column "status" {
     null = true
-    type = text
+    type = character_varying(255)
   }
   column "supplier" {
     null = true
-    type = text
+    type = character_varying(255)
   }
   column "unit" {
     null = true
-    type = text
+    type = character_varying(255)
   }
   column "vendor" {
     null = false
-    type = text
+    type = character_varying(255)
   }
   primary_key {
-    columns = [column.vendor, column.sku]
+    columns = [column.sku, column.vendor]
   }
   foreign_key "vendoritem_vendor_name_fk" {
     columns     = [column.vendor]
     ref_columns = [table.vendor.column.name]
     on_update   = NO_ACTION
     on_delete   = NO_ACTION
+  }
+  index "vendoritem_upc_index" {
+    columns = [column.upc]
+  }
+  index "vendoritem_vendor_index" {
+    columns = [column.vendor]
   }
 }
 table "vendoritemprice" {
@@ -1205,19 +1180,19 @@ table "vendoritemprice" {
   }
   column "catalog_date" {
     null = true
-    type = text
+    type = character_varying(7)
   }
   column "last_modified" {
-    null = true
+    null = false
     type = timestamptz
   }
   column "buy_range" {
     null = true
-    type = text
+    type = character_varying(50)
   }
   column "vendor_note" {
     null = true
-    type = text
+    type = character_varying(50)
   }
   column "post_type" {
     null = true
@@ -1225,14 +1200,14 @@ table "vendoritemprice" {
   }
   column "sku" {
     null = false
-    type = text
+    type = character_varying(255)
   }
   column "vendor" {
     null = false
-    type = text
+    type = character_varying(255)
   }
   primary_key {
-    columns = [column.vendor, column.sku, column.month, column.year]
+    columns = [column.month, column.year, column.sku, column.vendor]
   }
   foreign_key "vendoritemprice_vendor_name_fk" {
     columns     = [column.vendor]
@@ -1245,6 +1220,12 @@ table "vendoritemprice" {
     ref_columns = [table.vendoritem.column.sku, table.vendoritem.column.vendor]
     on_update   = NO_ACTION
     on_delete   = NO_ACTION
+  }
+  index "vendoritemprice_sku_vendor_index" {
+    columns = [column.sku, column.vendor]
+  }
+  index "vendoritemprice_vendor_index" {
+    columns = [column.vendor]
   }
 }
 enum "posttype" {
