@@ -6,13 +6,10 @@ on:
   pull_request:
     paths:
       - 'migrations/*'
-env:
-  AWS_REGION : us-east-1
 # Permissions to write comments on the pull request.
 permissions:
   contents: read
   pull-requests: write
-  id-token: write   # This is required for requesting the JWT
 jobs:
   lint:
     services:
@@ -38,9 +35,8 @@ jobs:
       - uses: ariga/atlas-action@v0
         with:
           dir: 'migrations'
-          dir-name: 'app'
           dev-url: 'postgres://postgres:pass@localhost:5432/dev?search_path=public&sslmode=disable'
-          cloud-token: ${{ secrets.ATLAS_CLOUD_TOKEN_CNJVOD }}
+          cloud-token: ${{ secrets.ATLAS_CLOUD_TOKEN_IN24Z9 }}
   sync:
     needs: lint
     services:
@@ -62,29 +58,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Configure AWS credentials from Gamma account
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          role-to-assume: arn:aws:iam::165569969323:role/github-action-role
-          aws-region: ${{ env.AWS_REGION }}
-      - name: Retrieve Secret from AWS Secrets Manager
-        run: |
-          secret_value=$(aws secretsmanager get-secret-value --secret-id 'rds!cluster-96cd49c6-1a15-4950-b89f-59fd040a22a6' --query 'SecretString' --output text)
-          password=$(echo $secret_value | jq -r '.password' | jq "@uri" -jRr)
-          db_secret=$(echo "postgres://postgres:$password@transformity-gamma.cluster-cu3q2lrqndpl.us-east-1.rds.amazonaws.com:5432/transformity_pos")
-          echo "secret_value=$password" >> "$GITHUB_ENV"
-          echo "db_secret=$db_secret" >> "$GITHUB_ENV"
-          echo "${{ env.db_secret }}"
       - uses: ariga/atlas-sync-action@v0
         with:
           dir: 'migrations'
-          name: 'app'
           dev-url: 'postgres://postgres:pass@postgres:5432/dev?search_path=public&sslmode=disable'
-          cloud-token: ${{ secrets.ATLAS_CLOUD_TOKEN_CNJVOD }}
-      - name: Deploy to Gamma DB
-        uses: ariga/atlas-deploy-action@v0
-        id: deploy-atlas-gamma
-        with:
-          url: ${{ env.db_secret }}
-          cloud-token: ${{ secrets.ATLAS_CLOUD_TOKEN_CNJVOD }}
-          cloud-dir: app # replace with your directory name
+          cloud-token: ${{ secrets.ATLAS_CLOUD_TOKEN_IN24Z9 }}
