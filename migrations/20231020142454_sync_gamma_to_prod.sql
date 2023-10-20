@@ -1,0 +1,10 @@
+-- Modify "employee" table
+ALTER TABLE "public"."employee" ADD COLUMN "is_admin" boolean NULL DEFAULT false;
+-- Modify "purchaseorderitems" table
+ALTER TABLE "public"."purchaseorderitems" DROP CONSTRAINT "purchaseorderitems_purchaseorders_id_fk", ADD CONSTRAINT "purchaseorderitems_purchaseorders_id_fk" FOREIGN KEY ("poid") REFERENCES "public"."purchaseorders" ("id") ON UPDATE CASCADE ON DELETE CASCADE;
+-- Modify "register" table
+ALTER TABLE "public"."register" DROP CONSTRAINT "register_pkey", DROP CONSTRAINT "register_entity_id_fk", DROP COLUMN "entity", DROP COLUMN "id", ADD COLUMN "entity_id" bigint NOT NULL, ADD COLUMN "register_number" bigint NOT NULL, ADD PRIMARY KEY ("entity_id", "register_number"), ADD CONSTRAINT "register_entity_id_fk" FOREIGN KEY ("entity_id") REFERENCES "public"."entity" ("id") ON UPDATE NO ACTION ON DELETE NO ACTION;
+-- Create "register_cart" table
+CREATE TABLE "public"."register_cart" ("entity_id" bigint NOT NULL, "register_number" bigint NOT NULL, "item_id" integer NOT NULL, "request_id" uuid NOT NULL, "bottle_deposit" numeric(38,2) NOT NULL, "discount" numeric(38,2) NOT NULL, "environment_fee" numeric(38,2) NOT NULL, "name" character varying(255) NOT NULL, "price" numeric(38,2) NOT NULL, "quantity" numeric(38,2) NOT NULL, "tax" numeric(38,2) NOT NULL, "total_price" numeric(38,2) NOT NULL, "upc" character varying(255) NOT NULL, PRIMARY KEY ("entity_id", "register_number", "item_id"), CONSTRAINT "register_cart_item_itemseqno_fk" FOREIGN KEY ("item_id") REFERENCES "public"."item" ("itemseqno") ON UPDATE NO ACTION ON DELETE NO ACTION, CONSTRAINT "register_cart_register_entity_id_register_number_fk" FOREIGN KEY ("entity_id", "register_number") REFERENCES "public"."register" ("entity_id", "register_number") ON UPDATE NO ACTION ON DELETE NO ACTION);
+-- Create index "register_cart_entity_id_register_number_index" to table: "register_cart"
+CREATE INDEX "register_cart_entity_id_register_number_index" ON "public"."register_cart" ("entity_id", "register_number");
