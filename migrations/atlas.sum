@@ -1,4 +1,4 @@
-h1:seFTmJDoiTygH61cQcXme+EY42P/xfBCZsmUrT9+CXU=
+h1:YjKRFHJAe6lAJpiiAIqPJN8JTQNi866aZoxbymu4eok=
 20231011185412_my_baseline.sql h1:870fvk7++uAh2jdHCMRFnLLZOShXqtZ6P+1V4kaH8Xg=
 20231011185425_replicate_production.sql h1:oWbAijRFqJb7ws5dikj+mLe/e5J1e7w6RxzT/lU4utU=
 20231012000354_create_transactions_void_reason.sql h1:rYshzMunlriyjKqGr5y+dlFfMEWdC7cHeT48bim2p9Y=
@@ -17,3 +17,4 @@ h1:seFTmJDoiTygH61cQcXme+EY42P/xfBCZsmUrT9+CXU=
 20231104211306_register_drop_transaction_and_add_entity_casacades.sql h1:UNgfp1m7NwyZPbAhQui8o9x7bOfXojpWdOBMZG3QDjA=
 20231105124134_customer_tables.sql h1:NIQ4CYHsHti3IizZMcOErwhuGF3e6p25s54exi0mio8=
 20231106212119_customer_info.sql h1:RjU50a3zGDsmc6bZLnViuPjBl4wcFDW/xbljc9+njyU=
+20231108025220_item_defaults.sql h1:NpmlRDGRV3nO5R+P2VgRTe5D5ovob6xINrmlPGW94vk=
