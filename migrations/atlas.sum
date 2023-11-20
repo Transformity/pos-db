@@ -1,4 +1,4 @@
-h1:0I5sPbf+aMFF6Cx/eM7FxdeAaEk/5mkl21oqiNLf6kc=
+h1:cZGrXW3POqgjSMB9g6lGceNU8bMwXPhu4Q+lzBfbVDE=
 20231011185412_my_baseline.sql h1:870fvk7++uAh2jdHCMRFnLLZOShXqtZ6P+1V4kaH8Xg=
 20231011185425_replicate_production.sql h1:oWbAijRFqJb7ws5dikj+mLe/e5J1e7w6RxzT/lU4utU=
 20231012000354_create_transactions_void_reason.sql h1:rYshzMunlriyjKqGr5y+dlFfMEWdC7cHeT48bim2p9Y=
@@ -21,3 +21,4 @@ h1:0I5sPbf+aMFF6Cx/eM7FxdeAaEk/5mkl21oqiNLf6kc=
 20231109144627_item_more_barcodes.sql h1:JbXcOADNRc1EskSdyy/ulblut4g+2u+nNdFt88M8cr4=
 20231112041340_vendor_item_column_types.sql h1:Lhvgm2J9vAlxM8vVElCO7y7EuhHun+hmwGAFYZLlCFI=
 20231112220726_transaction_item_item_id_nullable.sql h1:z3LaqCXYe57GzqxLm7dOnBwmRpBjvWkljII6igrWKXQ=
+20231120062918_gift_card.sql h1:uuqgyjQA7/LBQUJtT5xV/Un2g/Pl6wPZke4OvHXwdNQ=
