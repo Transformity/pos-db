@@ -1,4 +1,4 @@
-h1:FNoRPcuo0/O7Uu1bIwNaHfzGkXioZYWeqlYlfKOF2D4=
+h1:k34UjevTRZn/5pSFU52aK9PFbSI9OUMqVqv3OQnQWj0=
 20231011185412_my_baseline.sql h1:870fvk7++uAh2jdHCMRFnLLZOShXqtZ6P+1V4kaH8Xg=
 20231011185425_replicate_production.sql h1:oWbAijRFqJb7ws5dikj+mLe/e5J1e7w6RxzT/lU4utU=
 20231012000354_create_transactions_void_reason.sql h1:rYshzMunlriyjKqGr5y+dlFfMEWdC7cHeT48bim2p9Y=
@@ -30,3 +30,4 @@ h1:FNoRPcuo0/O7Uu1bIwNaHfzGkXioZYWeqlYlfKOF2D4=
 20231127060331_gift_card_trigger_updated_at.sql h1:6tZ6/dGxx4OFlTnNWroKN5wYNlXQ4kUEEoOSQEHW9FU=
 20231127063943_transactions_updated_at_and_createddate.sql h1:22v2j3nqUqg7oC7V0pXvfxLaYuXr4G4WUbuES4o49UA=
 20231129220646_update_purchaseorder_status.sql h1:1TogLoEjLRfBUl4iuOuYpVdGbsKJ64lE+gqs44GL00w=
+20231204195302_transaction_add_index.sql h1:KYIMSlkXXFGGrnlpartcGzZiYj4Wdxh9ERtKPjcePMA=
