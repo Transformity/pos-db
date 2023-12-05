@@ -1,5 +1,5 @@
 -- Modify "item" table
-ALTER TABLE "public"."item" ALTER COLUMN "size1" TYPE real, ADD COLUMN "size_unit" text NULL;
+ALTER TABLE "public"."item" ALTER COLUMN "size1" TYPE numeric using "size1"::numeric, ADD COLUMN "size_unit" text NULL;
 
 BEGIN;
 
