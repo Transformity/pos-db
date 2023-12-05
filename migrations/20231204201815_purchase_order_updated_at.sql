@@ -1,3 +1,3 @@
--- Modify "transactions" table
-ALTER TABLE "public"."transactions" ALTER COLUMN "updated_at" SET NOT NULL;
+-- Modify "purchaseorders" table
+ALTER TABLE "public"."purchaseorders" ADD COLUMN "updated_at" timestamptz NULL;
 UPDATE purchaseorders SET updated_at = createdate WHERE updated_at IS NULL;
