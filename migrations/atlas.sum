@@ -1,4 +1,4 @@
-h1:JJb/mfwVpA6r/L1Dcj1SdDwJel27dc7hyEzfHJf4IVo=
+h1:556MTBfg7iq62CGcfjXwKOm5zpiwmYkr0iiCPC8PrV8=
 20231011185412_my_baseline.sql h1:870fvk7++uAh2jdHCMRFnLLZOShXqtZ6P+1V4kaH8Xg=
 20231011185425_replicate_production.sql h1:oWbAijRFqJb7ws5dikj+mLe/e5J1e7w6RxzT/lU4utU=
 20231012000354_create_transactions_void_reason.sql h1:rYshzMunlriyjKqGr5y+dlFfMEWdC7cHeT48bim2p9Y=
@@ -42,3 +42,4 @@ h1:JJb/mfwVpA6r/L1Dcj1SdDwJel27dc7hyEzfHJf4IVo=
 20231215153038_invoice_more_details.sql h1:RYG4nhTHIZRv2WPh4GOtrFB8D2WI6Hc6wJTdTLM/zow=
 20231217041004_create_invoice_item_update_trigger.sql h1:vbLRy8Vx14xNuDyY3ad8zFaxurNLfDAaVbaOD29VaPQ=
 20231219192118_insert_register_on_entity_creation.sql h1:S9ySTiPhjfsuOXcmBoPtXCZC7sA1+h+BziXghm+3+Zc=
+20231219192846_match_fintech_to_item.sql h1:8JTwQ0KjhJ6MpEnF01ba1Rk4WYXc6sRswzp4NOIFE8c=
