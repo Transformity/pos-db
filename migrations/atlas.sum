@@ -1,4 +1,4 @@
-h1:yCHaZp441a3Zar7gFVmlommNPkL/TSmDJ2CZSmCiM+A=
+h1:qQ9Cvl6fF0hccKKojuacqcn9HW+TbmqATiM6zqiovaM=
 20231011185412_my_baseline.sql h1:870fvk7++uAh2jdHCMRFnLLZOShXqtZ6P+1V4kaH8Xg=
 20231011185425_replicate_production.sql h1:oWbAijRFqJb7ws5dikj+mLe/e5J1e7w6RxzT/lU4utU=
 20231012000354_create_transactions_void_reason.sql h1:rYshzMunlriyjKqGr5y+dlFfMEWdC7cHeT48bim2p9Y=
@@ -44,3 +44,5 @@ h1:yCHaZp441a3Zar7gFVmlommNPkL/TSmDJ2CZSmCiM+A=
 20231219192118_insert_register_on_entity_creation.sql h1:S9ySTiPhjfsuOXcmBoPtXCZC7sA1+h+BziXghm+3+Zc=
 20231219192846_match_fintech_to_item.sql h1:8JTwQ0KjhJ6MpEnF01ba1Rk4WYXc6sRswzp4NOIFE8c=
 20231219194240_adding_original_columns_invoice_item.sql h1:d+lDVa9BHVHaIRt0vHldSET31DyjpN5OpKvTew61xnw=
+20231219220645_adding_vendor_id.sql h1:FvAfy17PDZLutclNWImhkMGFNKRrcSeFDzwSJ5kLkrA=
+20231219220712_register_entity_fk_cascade_drops.sql h1:8gtR8LwgFW/OO+QUi+Ts90a5q9m+gg/FNLHNF0SxXaM=
