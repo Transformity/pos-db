@@ -1,4 +1,4 @@
-h1:w/sxd4Wg4762HXV1V4cLW4Epf0z3WSrHhnQ83WPGJ40=
+h1:vBicjPLE1RktvaTHaEcq12dJFdc3ZXCQRcTEXbrFDUE=
 20231011185412_my_baseline.sql h1:870fvk7++uAh2jdHCMRFnLLZOShXqtZ6P+1V4kaH8Xg=
 20231011185425_replicate_production.sql h1:oWbAijRFqJb7ws5dikj+mLe/e5J1e7w6RxzT/lU4utU=
 20231012000354_create_transactions_void_reason.sql h1:rYshzMunlriyjKqGr5y+dlFfMEWdC7cHeT48bim2p9Y=
@@ -48,3 +48,5 @@ h1:w/sxd4Wg4762HXV1V4cLW4Epf0z3WSrHhnQ83WPGJ40=
 20231219220712_register_entity_fk_cascade_drops.sql h1:E3FTs4LfQ7xk633jgXDYfFlffRTMk01jEGx5zTjpYZg=
 20231221074841_insert_super_admin_to_user_entity.sql h1:lpST4roQrHpb33TBOeodivCkDu+pTSLZtfL98b3TO10=
 20231221075139_user_entity_fk_cascade.sql h1:p6XB6Px13yx/Mh1LkrIuz5uMgqEkOhBMalrRL56H2Bk=
+20231221232828_item_size_units.sql h1:mggcYRVo3JJF6sEfJGYAG7BSzOw2JERcF+75PQO0RNA=
+20231221232909_vendor_id_key.sql h1:Sz9rcGeWG4CpwAF/zO/dKv0R/ECVZq9sM7ELSjQMYtA=
