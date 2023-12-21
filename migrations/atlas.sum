@@ -1,4 +1,4 @@
-h1:ZnutNrq4IEMRedY/gArV/hdGQY71zkvTBb3PhL1X2aM=
+h1:6d3UDBO3WSvL2wXJT+FaUYbLC7DjJVtw+hP/xqnMilo=
 20231011185412_my_baseline.sql h1:870fvk7++uAh2jdHCMRFnLLZOShXqtZ6P+1V4kaH8Xg=
 20231011185425_replicate_production.sql h1:oWbAijRFqJb7ws5dikj+mLe/e5J1e7w6RxzT/lU4utU=
 20231012000354_create_transactions_void_reason.sql h1:rYshzMunlriyjKqGr5y+dlFfMEWdC7cHeT48bim2p9Y=
@@ -46,3 +46,4 @@ h1:ZnutNrq4IEMRedY/gArV/hdGQY71zkvTBb3PhL1X2aM=
 20231219194240_adding_original_columns_invoice_item.sql h1:6dLV6P0AmfKIG5xnxuGtTDPt265JPw5Or4sgS5XlqIs=
 20231219220645_adding_vendor_id.sql h1:2xF0XJ9UryCWJZksfv5+y1lSWMCr8rcpzCBv29nyrfs=
 20231219220712_register_entity_fk_cascade_drops.sql h1:E3FTs4LfQ7xk633jgXDYfFlffRTMk01jEGx5zTjpYZg=
+20231221074841_insert_super_admin_to_user_entity.sql h1:lpST4roQrHpb33TBOeodivCkDu+pTSLZtfL98b3TO10=
