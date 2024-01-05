@@ -1,0 +1,2 @@
+-- Modify "item" table
+ALTER TABLE "public"."item" DROP CONSTRAINT "item_department_name_fk", DROP CONSTRAINT "item_item_itemseqno_fk", ADD COLUMN "aisle_location" text NULL, ADD COLUMN "is_refrigerated" boolean NULL DEFAULT false, ADD CONSTRAINT "item_department_name_fk" FOREIGN KEY ("deptcode") REFERENCES "public"."department" ("name") ON UPDATE CASCADE ON DELETE NO ACTION, ADD CONSTRAINT "item_item_itemseqno_fk" FOREIGN KEY ("subparentitemseqno") REFERENCES "public"."item" ("itemseqno") ON UPDATE CASCADE ON DELETE SET NULL;
