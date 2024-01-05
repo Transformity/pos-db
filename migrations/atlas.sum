@@ -1,4 +1,4 @@
-h1:QZXAi0+rL9cYkuQogaVR4qTClPPmX+/0gkeD0nkpnt4=
+h1:tLGdP3Q9PdnAfLECSyFOn4RAJ7L9AbCWYG4Vtl2vc44=
 20231011185412_my_baseline.sql h1:870fvk7++uAh2jdHCMRFnLLZOShXqtZ6P+1V4kaH8Xg=
 20231011185425_replicate_production.sql h1:oWbAijRFqJb7ws5dikj+mLe/e5J1e7w6RxzT/lU4utU=
 20231012000354_create_transactions_void_reason.sql h1:rYshzMunlriyjKqGr5y+dlFfMEWdC7cHeT48bim2p9Y=
@@ -62,6 +62,6 @@ h1:QZXAi0+rL9cYkuQogaVR4qTClPPmX+/0gkeD0nkpnt4=
 20240105043401_invoice_item_columns_addition.sql h1:FYjcQmDExJ65tODzNDUL4wKFSu27LnOMZ58UfEruwQU=
 20240105043507_item_foreign_key_and_aisles.sql h1:ATKAyPUlXdVCOmZzGuFpwUR3qZwFD9OaA/mV3T3wuMw=
 20240105043543_transaction_fk.sql h1:xDlHPTc1xP8L+32OgCiPxfxy/I/8WXesNfz/UELfmUM=
-20240105043624_vendor_item_optimizations.sql h1:8oUshTxREUAdTvdZgJcIRfEqU2CND5mbJ8NJvEkJXdg=
-20240105171850_item_fridge_location.sql h1:z+ux8E9nE+PrX/aE6puh/smqv4TkQKhZnQX0rgOaQLw=
-20240105215214_vendor_item_price.sql h1:g09+BPikMUTXRjwBTepURP90iYUHqOe2zCu5aqs3ykQ=
+20240105043624_vendor_item_optimizations.sql h1:0e4fIyTmawPPzSTgFpyQXgdaVarg6fVSdM//wMC5JgU=
+20240105171850_item_fridge_location.sql h1:GN9ScSbyv2KFJYizLeWy2J/ILRGjlhp5aB96NYb5M8E=
+20240105215214_vendor_item_price.sql h1:rz/bJ/7lQxpYHqbJ4eG+SV8hK0xCKALqYkTi3gUV7kw=
